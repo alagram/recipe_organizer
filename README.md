@@ -1,4 +1,4 @@
 Recipe Organizer
 ==================
 
-A Recipe Organizer
+Recipe Organizer Backend
