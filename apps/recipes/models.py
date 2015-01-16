@@ -9,8 +9,8 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(max_length = 100)
-    description = models.TextField(blank = True, help_text = "This is a quick description of your recipe")
-    directions = models.TextField(help_text = "How to make the recipe")
+    description = models.TextField(blank = True, help_text = "This is a quick description of your recipes")
+    directions = models.TextField(help_text = "How to make the recipes")
     ingredients = models.ManyToManyField(Ingredient)
 
     def __str__(self):
