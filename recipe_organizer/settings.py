@@ -89,6 +89,7 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     'localhost/',
+    'albertagram.com',
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
