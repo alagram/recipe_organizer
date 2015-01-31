@@ -89,7 +89,7 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     'localhost/',
-    'recipe.albertagram.com',
+    'recipe.albertagram.com'
 )
 
 REST_FRAMEWORK = {
