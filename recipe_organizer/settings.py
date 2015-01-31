@@ -92,4 +92,10 @@ CORS_ORIGIN_WHITELIST = (
     'recipe.albertagram.com',
 )
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    )
+}
+
 CORS_ORIGIN_ALLOW_ALL = True
