@@ -1,7 +1,7 @@
 from rest_framework import permissions, status, viewsets
 from rest_framework.response import Response
-from authentucation.models import Account
-from authentucation.serializers import AccountSerializer
+from authentication.models import Account
+from authentication.serializers import AccountSerializer
 
 class AccountViewSet(viewsets.ModelViewSet):
     lookup_field = 'username'
