@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from rest_framework import routers
+from rest_framework_nested import routers
 from authentication.views import AccountViewSet
 
 router = routers.SimpleRouter()
