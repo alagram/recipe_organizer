@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'apps.recipes',
     'rest_framework',
     'corsheaders',
+    'authentication',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -94,5 +95,9 @@ CORS_ORIGIN_WHITELIST = (
 CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': []
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        )
 }
+
+AUTH_USER_MODEL = 'authentication.Account'
