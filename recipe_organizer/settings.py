@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,8 +44,8 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'corsheaders.middleware.CorsMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -91,6 +91,14 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     'localhost/',
 )
+
+CORS_ALLOW_HEADERS = (
+    'X-REQUESTED-WITH',
+    'CONTENT-TYPE',
+    'ACCEPT',
+    'ORIGIN',
+    'X-CSRFToken'
+    )
 
 CORS_ORIGIN_ALLOW_ALL = True
 
