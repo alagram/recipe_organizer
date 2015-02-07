@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,12 +39,13 @@ INSTALLED_APPS = (
     'apps.recipes',
     'rest_framework',
     'corsheaders',
+    'authentication',
 )
 
 MIDDLEWARE_CLASSES = (
     'corsheaders.middleware.CorsMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -91,8 +92,20 @@ CORS_ORIGIN_WHITELIST = (
     'localhost/',
 )
 
+CORS_ALLOW_HEADERS = (
+    'X-REQUESTED-WITH',
+    'CONTENT-TYPE',
+    'ACCEPT',
+    'ORIGIN',
+    'X-CSRFToken'
+    )
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': []
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        )
 }
+
+AUTH_USER_MODEL = 'authentication.Account'
